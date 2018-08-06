@@ -38,9 +38,8 @@ WORKDIR /usr/src/app
 
 COPY package.json package.json
 
-RUN npm install -g npm
-RUN npm install
-RUN npm cache clean --force
+RUN npm install \
+  && npm cache clean --force
 
 COPY . .
 
